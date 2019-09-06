@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cat&mouse</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Rat(name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = true;
+        this.say = function () {
+            console.log("Chit Chit..");
+        }
+        this.showStatus = function () {
+            if (this.status == true) {
+                console.log("living");
+            } else{
+                console.log("death");
+            }
+        }
+
+    };
+
+    function Cat(name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.say = function () {
+            console.log("meo meo ...");
+        }
+        this.isCatched = function (rat) {
+            if(this.speed > rat.speed && rat.status == true){
+                return true;
+            }
+        }
+        this.eat = function (rat) {
+            if(this.isCatched(rat)){
+                console.log("Eating..");
+                rat.status = false;
+                this.weight += rat.weight;
+            }else {
+                console.log("Can't catch this mouse !")
+            }
+        }
+    };
+
+    let cat = new Cat("Tom", 21, 25);
+    let rat = new Rat("Jerry", 10, 20);
+
+    rat.say();
+    rat.showStatus();
+    cat.say();
+    cat.isCatched(rat);
+    cat.eat(rat);
+
+</script>
+
+</html>
