@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+</head>
+<body>
+
+</body>
+    <script>
+        let date = new Date(2017, 3, 25, 12, 4, 5);
+        //let getdate = getDate();
+        //alert(date);
+
+
+        var a = Math.pow(2,3);
+        console.log(a);
+
+        let word = "Hello World!";
+        let b = word.endsWith(word, 5);
+        console.log(b);
+
+        // const person1 = new Object({
+        //     name: 'Chris',
+        //     age: 38,
+        //     greeting: function() {
+        //         alert('Hi! I\'m ' + this.name + '.');
+        //     }
+        // });
+
+        function Person(first, last, age, gender, interests) {
+            this.name = {
+                first,
+                last
+            };
+            this.age = age;
+            this.gender = gender;
+            this.interests = interests;
+            this.bio = function() {
+                alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+            };
+            this.greeting = function() {
+                alert('Hi! I\'m ' + this.name.first + '.');
+            };
+        };
+        var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+        let age = person1['age'];
+
+
+        let person2 = Object.create(person1);
+        person2.name;
+        person2.greeting();
+
+
+    </script>
+</html>
